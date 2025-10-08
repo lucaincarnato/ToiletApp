@@ -14,9 +14,22 @@
 		42FBD06C2E9672AC00739E01 /* ToiletApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToiletApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4236D3312E969F3F002C14BD /* Exceptions for "ToiletApp" folder in "ToiletApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 42FBD06B2E9672AC00739E01 /* ToiletApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		42FBD06E2E9672AC00739E01 /* ToiletApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4236D3312E969F3F002C14BD /* Exceptions for "ToiletApp" folder in "ToiletApp" target */,
+			);
 			path = ToiletApp;
 			sourceTree = "<group>";
 		};
@@ -265,6 +278,7 @@
 				DEVELOPMENT_TEAM = W3B7XH945C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToiletApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ToiletApp;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -303,6 +317,7 @@
 				DEVELOPMENT_TEAM = W3B7XH945C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToiletApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ToiletApp;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
