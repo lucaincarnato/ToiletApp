@@ -1,0 +1,24 @@
+{
+  "originHash" : "0f99df0de96c27091df14df7fb36a6163312eeb82e1db19267edc06dda16ad8c",
+  "pins" : [
+    {
+      "identity" : "gsplayer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wxxsw/GSPlayer.git",
+      "state" : {
+        "revision" : "7a384dee1fbeca02e176de8b4112bfded36f42e0",
+        "version" : "0.2.30"
+      }
+    },
+    {
+      "identity" : "videoplayer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wxxsw/VideoPlayer",
+      "state" : {
+        "revision" : "7a388d3e16ba7a9c347ef2c41079d517eecc9c5a",
+        "version" : "1.2.5"
+      }
+    }
+  ],
+  "version" : 3
+}
