@@ -28,7 +28,6 @@ struct AlarmListView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button() {
                         let newAlarm = TAlarm(
-                            sleepTime: Alarm.Schedule.Relative.Time(hour: 0, minute: 0),
                             wakeTime: Alarm.Schedule.Relative.Time(hour: 8, minute: 0)
                         )
                         modelContext.insert(newAlarm)
@@ -42,21 +41,11 @@ struct AlarmListView: View {
             .task {
                 // Asks for permission before even starting the app
                 let _ = await requestAlarmPermission()
-                requestNotificationPermission()
             }
         }
     }
     
     // MARK: PRIVATE METHODS
-    // Asks for notification permission
-    private func requestNotificationPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-            if let error = error {
-                print("Error while asking permission: \(error.localizedDescription)")
-            }
-        }
-    }
-    
     // Asks for alarm permission
     private func requestAlarmPermission() async -> Bool {
         switch AlarmManager.shared.authorizationState {

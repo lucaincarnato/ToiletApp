@@ -18,7 +18,6 @@ class TAlarm{
     // MARK: ATTRIBUTES
     var TID: UUID = UUID()
     var alarmIDs: [Alarm.ID] = []
-    var sleepTime: Alarm.Schedule.Relative.Time = Alarm.Schedule.Relative.Time(hour: 23, minute: 30)
     var wakeTime: Alarm.Schedule.Relative.Time = Alarm.Schedule.Relative.Time(hour: 8, minute: 30)
     var weekdays: [Locale.Weekday] = []
     var sound: String = "Princess"
@@ -40,28 +39,16 @@ class TAlarm{
     ]
     
     // MARK: INITIALIZERS
-    init(sleepTime: Alarm.Schedule.Relative.Time, wakeTime: Alarm.Schedule.Relative.Time) {
-        self.sleepTime = sleepTime
+    init(wakeTime: Alarm.Schedule.Relative.Time) {
         self.wakeTime = wakeTime
     }
     
     init() {}
     
     // MARK: PUBLIC METHODS
-    // Get the difference in minutes between the sleep and wake time (in hour and minutes)
-    func getDuration() -> Int {
-        let sleepMinutes = sleepTime.hour * 60 + sleepTime.minute
-        let wakeMinutes = wakeTime.hour * 60 + wakeTime.minute
-        // Return inverse duration (day - time determined) if the user goes to sleep before midnight
-        if wakeMinutes < sleepMinutes { return 1440 - abs(wakeMinutes - sleepMinutes)}
-        return abs(wakeMinutes - sleepMinutes)
-    }
-    
     // Schedule a notification to remind of bedtime and ten alarms
     func setAlarm() async {
         active = true
-        clearAllNotifications() // Does not confuse user with many bedtime
-        scheduleNotification(sleepTime)
         // Schedule ten alarms distanced by one minute
         for i in 0...9 {
             await scheduleAlarm(hour: wakeTime.hour, minute: wakeTime.minute + i)
@@ -98,26 +85,7 @@ class TAlarm{
     }
     
     // MARK: PRIVATE METHODS
-    // Schedule a notification for the specified date
-    private func scheduleNotification(_ time: Alarm.Schedule.Relative.Time) {
-        // Notification content
-        let content = UNMutableNotificationContent()
-        content.title = "It's bedtime!"
-        content.body = "Don't lose your \(getDuration() / 60) hours and \(getDuration() % 60) minutes of sleep."
-        content.sound = .default
-        // Notification preparation
-        let trigger = UNCalendarNotificationTrigger(dateMatching: DateComponents(hour: time.hour, minute: time.minute), repeats: false)
-        // Notification scheduling
-        let request = UNNotificationRequest(identifier: TID.uuidString, content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request)
-    }
 
-    // Clear all delivered and pending notification from user notification center
-    private func clearAllNotifications() {
-        let notificationCenter = UNUserNotificationCenter.current()
-        notificationCenter.removeAllDeliveredNotifications()
-        notificationCenter.removeAllPendingNotificationRequests()
-    }
     
     // Schedule an alarm at the next hour:minute
     private func scheduleAlarm(hour: Int, minute: Int) async {
