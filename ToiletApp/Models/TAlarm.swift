@@ -71,22 +71,20 @@ class TAlarm{
     }
     
     // Get Time component and compose right string
-    static func toString(_ text: Alarm.Schedule.Relative.Time) -> String{
+    static func toString(_ alarm: TAlarm) -> String{
         let hourString: String
         let minuteString: String
         // If hour has only one digit add 0 in front
-        if text.hour < 10 { hourString = "0\(text.hour)" }
-        else { hourString = "\(text.hour)" }
+        if alarm.wakeTime.hour < 10 { hourString = "0\(alarm.wakeTime.hour)" }
+        else { hourString = "\(alarm.wakeTime.hour)" }
         // If minute has only one digit add 0 in front
-        if text.minute < 10 { minuteString = "0\(text.minute)" }
-        else { minuteString = "\(text.minute)" }
+        if alarm.wakeTime.minute < 10 { minuteString = "0\(alarm.wakeTime.minute)" }
+        else { minuteString = "\(alarm.wakeTime.minute)" }
         // Compose string
         return "\(hourString):\(minuteString)"
     }
     
     // MARK: PRIVATE METHODS
-
-    
     // Schedule an alarm at the next hour:minute
     private func scheduleAlarm(hour: Int, minute: Int) async {
         let alarmID = UUID()

@@ -19,9 +19,24 @@ struct AlarmListView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                /*
-                 CARDS FOR THE ALARMS
-                 */
+                if alarms.isEmpty {
+                    Text("No alarms")
+                        .font(.subheadline)
+                        .padding()
+                        .foregroundStyle(.gray)
+                } else {
+                    List {
+                        ForEach(alarms, id: \.self) { alarm in
+                            NavigationLink {
+                                // SetAlarmView
+                            } label: {
+                                AlarmCard(alarm: alarm)
+                            }
+                        }
+                        .onDelete(perform: deleteAlarm)
+                    }
+                    .listStyle(.plain)
+                }
             }
             .navigationTitle("Alarms")
             .toolbar {
@@ -64,8 +79,18 @@ struct AlarmListView: View {
             return false
         }
     }
+    
+    // Safely deletes an item when swiped from list
+    private func deleteAlarm(at offsets: IndexSet) {
+        for index in offsets {
+            let alarm = alarms[index]
+            modelContext.delete(alarm)
+        }
+        try? modelContext.save()
+    }
 }
 
 #Preview {
     AlarmListView()
+        .modelContainer(TAlarm.preview)
 }
