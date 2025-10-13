@@ -27,11 +27,7 @@ struct AlarmListView: View {
                 } else {
                     List {
                         ForEach(alarms, id: \.self) { alarm in
-                            NavigationLink {
-                                // SetAlarmView
-                            } label: {
-                                AlarmCard(alarm: alarm)
-                            }
+                            AlarmCard(alarm: alarm)
                         }
                         .onDelete(perform: deleteAlarm)
                     }
