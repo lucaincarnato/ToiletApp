@@ -52,8 +52,7 @@ struct AlarmCard: View {
             }
         }
         .fullScreenCover(isPresented: $alarmGame) {
-            Text("NO WAY YOU WOKE UP")
-                .onAppear { alarm.cancelAlarm() }
+            Button("WAKE UP") { alarm.cancelAlarm() }
         }
         .sheet(isPresented: $setAlarm) {
             SetAlarmView(alarm: $alarm, setAlarm: $setAlarm)
