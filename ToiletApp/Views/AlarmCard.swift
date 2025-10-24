@@ -14,9 +14,11 @@ struct AlarmCard: View {
     @Environment(\.modelContext) private var modelContext
     @State var alarm: TAlarm
     @State var setAlarm: Bool = false
+    @AppStorage("ToiletRecognition") private var alarmGame: Bool = false
+
     @State var image: UIImage?
     @State var prediction: String = "No prediction yet"
-    @AppStorage("ToiletRecognition") private var alarmGame: Bool = false
+    var player: AudioPlayer = AudioPlayer()
     
     // MARK: VIEW BODY
     var body: some View {
@@ -57,10 +59,17 @@ struct AlarmCard: View {
         .fullScreenCover(isPresented: $alarmGame, onDismiss: {
             Task {
                 prediction = await classify((image?.toCVPixelBuffer())!) ?? "No prediction yet"
+                if (prediction != "Western toilet" && prediction != "Indian Toilet Seat") {
+                    alarmGame = true
+                } else {
+                    alarm.cancelAlarm()
+                    player.stopSound()
+                }
             }
         }){
             CameraView(image: $image)
                 .ignoresSafeArea()
+                .onAppear(){ player.playSound(alarm.sound, loop: true) }
         }
         .sheet(isPresented: $setAlarm) {
             SetAlarmView(alarm: $alarm, setAlarm: $setAlarm)
