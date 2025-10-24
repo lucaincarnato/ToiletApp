@@ -18,6 +18,7 @@ struct AlarmCard: View {
 
     @State var image: UIImage?
     @State var prediction: String = "No prediction yet"
+    @State var alert: Bool = false
     var player: AudioPlayer = AudioPlayer()
     
     // MARK: VIEW BODY
@@ -56,11 +57,17 @@ struct AlarmCard: View {
                     }
             }
         }
+        .sensoryFeedback(.error, trigger: alert) {old, new in
+            new == true
+        }
+        .sensoryFeedback(.success, trigger: prediction) {old, new in
+            new == "Western toilet" || new == "Indian Toilet Seat"
+        }
         .fullScreenCover(isPresented: $alarmGame, onDismiss: {
             Task {
                 prediction = await classify((image?.toCVPixelBuffer())!) ?? "No prediction yet"
                 if (prediction != "Western toilet" && prediction != "Indian Toilet Seat") {
-                    alarmGame = true
+                    alert = true
                 } else {
                     alarm.cancelAlarm()
                     player.stopSound()
@@ -76,6 +83,12 @@ struct AlarmCard: View {
         }
         .onAppear {
             setAlarm = Date.now.timeIntervalSince(alarm.created) < 0.5
+        }
+        .alert("Toilet not recognized", isPresented: $alert) {
+            Button("Retry") { alarmGame = true }
+                .keyboardShortcut(.defaultAction)
+        } message: {
+            Text("Try taking another photo")
         }
     }
     

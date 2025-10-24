@@ -5,7 +5,6 @@
 //  Created by Luca Maria Incarnato on 08/10/25.
 //
 
-
 import SwiftData
 import SwiftUI
 import Foundation
@@ -113,7 +112,7 @@ class TAlarm{
         // Get attributes for ActivityKit tools
         let attributes = AlarmAttributes<CookingData>(
             presentation: AlarmPresentation(alert: alertPresentation),
-            tintColor: Color.accentColor,
+            tintColor: Color.accent,
         )
         // Secondary button custom action's intent
         let secondaryIntent = OpenInApp(alarmID: alarmID.uuidString)
