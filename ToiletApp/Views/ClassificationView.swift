@@ -9,31 +9,23 @@ import SwiftUI
 import CoreML
 
 struct ClassificationView: View {
+    @State var image: UIImage?
+    @State var show: Bool = false
+    @State var prediction: String = "No prediction yet"
+    
     var body: some View {
-        ZStack{
-            Rectangle()
-                .frame(maxWidth: .infinity)
-                .aspectRatio(1, contentMode: .fit)
-                .foregroundStyle(Color.clear)
-                .border(.white)
-            Text("Camera not available")
-            VStack {
-                Text(Date.now.formatted(date: .omitted, time: .shortened))
-                    .font(.system(size: 100))
-                    .bold()
-                    .foregroundStyle(Color.secondary)
-                Spacer()
-                Button(){
-                    print("CIAO")
-                } label: {
-                    Image(systemName: "camera.fill")
-                        .font(.largeTitle)
-                        .frame(width: 100, height: 100)
-                        .foregroundStyle(Color.white)
-                }
-                .buttonBorderShape(.circle)
-                .glassEffect(.clear.interactive(), in: Circle())
+        VStack{
+            Button(prediction) {
+                show = true
             }
+        }
+        .fullScreenCover(isPresented: $show, onDismiss: {
+            Task {
+                prediction = await classify((image?.toCVPixelBuffer())!) ?? "No prediction yet"
+            }
+        }){
+            CameraView(image: $image)
+                .ignoresSafeArea()
         }
     }
     
