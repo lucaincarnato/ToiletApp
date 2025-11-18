@@ -16,7 +16,7 @@ class AudioPlayer: ObservableObject {
         if let player = player, player.isPlaying {
             return
         }
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "wav") else {
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "mp3") else {
             print("File not found")
             return
         }

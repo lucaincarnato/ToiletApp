@@ -25,16 +25,12 @@ class TAlarm{
     
     // MARK: STATIC ATTRIBUTES
     static var sounds: [String] = [
-        "Princess",
-        "Celestial",
-        "Enchanted",
-        "Joy",
-        "Mindful",
-        "Penguin",
-        "Plucks",
-        "Stardust",
-        "Sunday",
-        "Valley"
+        "Beep",
+        "Fast",
+        "Fresh",
+        "Funny",
+        "Kind",
+        "Quick"
     ]
     
     // MARK: INITIALIZERS
@@ -121,7 +117,7 @@ class TAlarm{
             schedule: schedule,
             attributes: attributes,
             secondaryIntent: secondaryIntent,
-            sound: .named(sound + ".wav")
+            sound: .named(sound + ".mp3")
         )
         // Schedule alarm
         do {
