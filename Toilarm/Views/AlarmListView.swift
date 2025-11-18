@@ -1,6 +1,6 @@
 //
 //  AlarmListView.swift
-//  ToiletApp
+//  Toilarm
 //
 //  Created by Luca Maria Incarnato on 08/10/25.
 //

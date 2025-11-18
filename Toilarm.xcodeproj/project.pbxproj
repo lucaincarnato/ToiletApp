@@ -11,26 +11,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		42FBD06C2E9672AC00739E01 /* ToiletApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToiletApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42FBD06C2E9672AC00739E01 /* Toilarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toilarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		4236D3312E969F3F002C14BD /* Exceptions for "ToiletApp" folder in "ToiletApp" target */ = {
+		4236D3312E969F3F002C14BD /* Exceptions for "Toilarm" folder in "Toilarm" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 42FBD06B2E9672AC00739E01 /* ToiletApp */;
+			target = 42FBD06B2E9672AC00739E01 /* Toilarm */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		42FBD06E2E9672AC00739E01 /* ToiletApp */ = {
+		42FBD06E2E9672AC00739E01 /* Toilarm */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				4236D3312E969F3F002C14BD /* Exceptions for "ToiletApp" folder in "ToiletApp" target */,
+				4236D3312E969F3F002C14BD /* Exceptions for "Toilarm" folder in "Toilarm" target */,
 			);
-			path = ToiletApp;
+			path = Toilarm;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -50,7 +50,7 @@
 		42FBD0632E9672AC00739E01 = {
 			isa = PBXGroup;
 			children = (
-				42FBD06E2E9672AC00739E01 /* ToiletApp */,
+				42FBD06E2E9672AC00739E01 /* Toilarm */,
 				42FBD06D2E9672AC00739E01 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,7 +58,7 @@
 		42FBD06D2E9672AC00739E01 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42FBD06C2E9672AC00739E01 /* ToiletApp.app */,
+				42FBD06C2E9672AC00739E01 /* Toilarm.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,9 +66,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		42FBD06B2E9672AC00739E01 /* ToiletApp */ = {
+		42FBD06B2E9672AC00739E01 /* Toilarm */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42FBD0772E9672AD00739E01 /* Build configuration list for PBXNativeTarget "ToiletApp" */;
+			buildConfigurationList = 42FBD0772E9672AD00739E01 /* Build configuration list for PBXNativeTarget "Toilarm" */;
 			buildPhases = (
 				42FBD0682E9672AC00739E01 /* Sources */,
 				42FBD0692E9672AC00739E01 /* Frameworks */,
@@ -79,14 +79,14 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				42FBD06E2E9672AC00739E01 /* ToiletApp */,
+				42FBD06E2E9672AC00739E01 /* Toilarm */,
 			);
-			name = ToiletApp;
+			name = Toilarm;
 			packageProductDependencies = (
 				42FBD0D52E9675D600739E01 /* VideoPlayer */,
 			);
 			productName = ToiletApp;
-			productReference = 42FBD06C2E9672AC00739E01 /* ToiletApp.app */;
+			productReference = 42FBD06C2E9672AC00739E01 /* Toilarm.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 42FBD0672E9672AC00739E01 /* Build configuration list for PBXProject "ToiletApp" */;
+			buildConfigurationList = 42FBD0672E9672AC00739E01 /* Build configuration list for PBXProject "Toilarm" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42FBD06B2E9672AC00739E01 /* ToiletApp */,
+				42FBD06B2E9672AC00739E01 /* Toilarm */,
 			);
 		};
 /* End PBXProject section */
@@ -281,8 +281,8 @@
 				DEVELOPMENT_TEAM = W3B7XH945C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ToiletApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ToiletApp;
+				INFOPLIST_FILE = Toilarm/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Toilarm;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We'll use the camera to stop your alarms when objects are detected. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -322,8 +322,8 @@
 				DEVELOPMENT_TEAM = W3B7XH945C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ToiletApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ToiletApp;
+				INFOPLIST_FILE = Toilarm/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Toilarm;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We'll use the camera to stop your alarms when objects are detected. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -355,7 +355,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		42FBD0672E9672AC00739E01 /* Build configuration list for PBXProject "ToiletApp" */ = {
+		42FBD0672E9672AC00739E01 /* Build configuration list for PBXProject "Toilarm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42FBD0752E9672AD00739E01 /* Debug */,
@@ -364,7 +364,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42FBD0772E9672AD00739E01 /* Build configuration list for PBXNativeTarget "ToiletApp" */ = {
+		42FBD0772E9672AD00739E01 /* Build configuration list for PBXNativeTarget "Toilarm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42FBD0782E9672AD00739E01 /* Debug */,

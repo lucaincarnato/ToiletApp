@@ -1,6 +1,6 @@
 //
-//  ToiletAppApp.swift
-//  ToiletApp
+//  ToilarmApp.swift
+//  Toilarm
 //
 //  Created by Luca Maria Incarnato on 08/10/25.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct ToiletAppApp: App {
+struct ToilarmApp: App {
     var body: some Scene {
         WindowGroup {
             AlarmListView()

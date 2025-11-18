@@ -1,6 +1,6 @@
 //
 //  CameraView.swift
-//  ToiletApp
+//  Toilarm
 //
 //  Created by Luca Maria Incarnato on 24/10/25.
 //

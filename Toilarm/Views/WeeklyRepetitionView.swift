@@ -1,6 +1,6 @@
 //
 //  WeeklyRepetitionView.swift
-//  ToiletApp
+//  Toilarm
 //
 //  Created by Luca Maria Incarnato on 13/10/25.
 //
