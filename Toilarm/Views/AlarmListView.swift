@@ -53,6 +53,9 @@ struct AlarmListView: View {
                 // Asks for permission before even starting the app
                 let _ = await requestAlarmPermission()
             }
+            .fullScreenCover(isPresented: $onboarding) {
+                OnboardingView()
+            }
         }
     }
     

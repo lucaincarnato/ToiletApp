@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		42FBD0D62E9675D600739E01 /* VideoPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = 42FBD0D52E9675D600739E01 /* VideoPlayer */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		42FBD06C2E9672AC00739E01 /* Toilarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toilarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -40,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FBD0D62E9675D600739E01 /* VideoPlayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +78,6 @@
 			);
 			name = Toilarm;
 			packageProductDependencies = (
-				42FBD0D52E9675D600739E01 /* VideoPlayer */,
 			);
 			productName = ToiletApp;
 			productReference = 42FBD06C2E9672AC00739E01 /* Toilarm.app */;
@@ -114,7 +108,6 @@
 			mainGroup = 42FBD0632E9672AC00739E01;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				42FBD0D42E9675D600739E01 /* XCRemoteSwiftPackageReference "VideoPlayer" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 42FBD06D2E9672AC00739E01 /* Products */;
@@ -374,25 +367,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		42FBD0D42E9675D600739E01 /* XCRemoteSwiftPackageReference "VideoPlayer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/wxxsw/VideoPlayer";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.5;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		42FBD0D52E9675D600739E01 /* VideoPlayer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 42FBD0D42E9675D600739E01 /* XCRemoteSwiftPackageReference "VideoPlayer" */;
-			productName = VideoPlayer;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 42FBD0642E9672AC00739E01 /* Project object */;
 }
