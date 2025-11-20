@@ -19,7 +19,7 @@ class TAlarm{
     var alarmIDs: [Alarm.ID] = []
     var wakeTime: Alarm.Schedule.Relative.Time = Alarm.Schedule.Relative.Time(hour: 8, minute: 30)
     var weekdays: [Locale.Weekday] = []
-    var sound: String = "Princess"
+    var sound: String = "Beep"
     var active: Bool = false
     var created: Date = Date()
     
@@ -117,7 +117,7 @@ class TAlarm{
             schedule: schedule,
             attributes: attributes,
             secondaryIntent: secondaryIntent,
-            sound: .named(sound + ".mp3")
+            sound: .named(sound + ".wav")
         )
         // Schedule alarm
         do {
