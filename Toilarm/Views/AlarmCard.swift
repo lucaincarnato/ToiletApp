@@ -69,8 +69,8 @@ struct AlarmCard: View {
                 if (prediction != "Western toilet" && prediction != "Indian Toilet Seat") {
                     alert = true
                 } else {
-                    alarm.cancelAlarm()
                     player.stopSound()
+                    alarm.cancelAlarm()
                 }
             }
         }){

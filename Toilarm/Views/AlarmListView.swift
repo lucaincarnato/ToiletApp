@@ -80,6 +80,7 @@ struct AlarmListView: View {
     private func deleteAlarm(at offsets: IndexSet) {
         for index in offsets {
             let alarm = alarms[index]
+            alarm.cancelAlarm()
             modelContext.delete(alarm)
         }
         try? modelContext.save()

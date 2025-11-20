@@ -96,7 +96,7 @@ class TAlarm{
         let secondaryButton = AlarmButton(
             text: "Wake Up",
             textColor: Color.white,
-            systemImageName: "basketball.fill"
+            systemImageName: "toilet.fill"
         )
         // Set up the presentation for alarm
         let alertPresentation = AlarmPresentation.Alert(
